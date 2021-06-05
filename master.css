@@ -65,6 +65,11 @@ a{
   border-radius: .5rem;
 }
 
+.monthly-cost{
+  text-align: center;
+
+}
+
 .price{
   font-size: 2rem;
   color: hsl(227, 35%, 25%);
@@ -73,6 +78,7 @@ a{
 
 .toggle__section{
   display: flex;
+  justify-content: center;
   font-size: 14px;
 }
 
@@ -81,9 +87,14 @@ a{
   width: 40px;
   height: 24px;
   border-radius: 12px;
-  background: gray;
+  background: hsl(223, 50%, 87%);
   margin: 0 .9rem;
 }
+
+.toggle__btn:hover{
+  background: hsl(174, 77%, 80%);
+}
+
 
 .toggle__btn--switch{
   margin: 2px;
@@ -92,6 +103,11 @@ a{
   height: 20px;
   background: white;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle__btn--switch--on{
+  transform: translateX(calc(100% - 2px));
 }
 
 .discount{
@@ -101,11 +117,72 @@ a{
   border-radius: 1rem;
 }
 
+.card__footer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: solid 2px hsla(225, 20%, 60%, 0.25);
+}
+
+.perks{
+  text-align: center;
+}
+.perks__item + .perks__item{
+  margin-top: 0.5rem;
+}
+
+.check{
+  margin-right: .5rem;
+}
+
 .trial__btn{
-  display: inline-block;
+  display: block;
   padding: .5rem 2rem;
   margin: 1rem auto;
   color:hsl(224, 65%, 95%);
   background:  hsl(227, 35%, 25%);
   border-radius: 1.5rem;
+  text-align: center;
+  max-width: 200px;
+}
+
+@media(min-width: 600px){
+  .card__header{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    padding: 1rem 2rem;
+  }
+
+  .Pageviews{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: start;
+  }
+
+  .scroll{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .monthly-cost{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: end;
+  }
+
+  .card__footer{
+    flex-direction: row;
+    align-items: center;
+  }
+  .perks{
+    text-align: left;
+  }
 }

@@ -29,27 +29,27 @@
     </div>
 
     <div class="card">
-      <p class="Pageviews"><span>100K</span> Pageviews</p>
-      <div class="scroll">
-        <div class=""></div>
+      <div class="card__header">
+        <p class="Pageviews"><span id="page">100K</span> Pageviews</p>
+        <input type="range"  class="scroll" min="1" max="5" step="1" value="2" >
+        <p class="monthly-cost"><span class="price">$16.00</span> /month</p>
       </div>
-      <p><span class="price">$16.00</span> /month</p>
-
       <div class="toggle__section">
         <p>Monthly Billing</p>
-        <div class="toggle__btn">
-          <span class="toggle__btn--switch"></span>
+        <div class="toggle__btn" id="toggle-btn">
+          <span class=" toggle__btn--switch"></span>
         </div>
         <p>Yearly Billing <span class="discount">-25%</span> </p>
       </div>
 
-      <ul class="perks">
-        <li>Unlimited websites</li>
-        <li>100% data ownership</li>
-        <li>Email reports</li>
-      </ul>
-
-      <a href="#" class="trial__btn">Start my trial</a>
+      <div class="card__footer">
+        <ul class="perks">
+          <li class="perks__item"><img src="./images/icon-check.svg" alt="" class="check"> Unlimited websites</li>
+          <li class="perks__item"><img src="./images/icon-check.svg" alt=""  class="check"> 100% data ownership</li>
+          <li class="perks__item"><img src="./images/icon-check.svg" alt=""  class="check"> Email reports</li>
+        </ul>
+        <a href="#" class="trial__btn">Start my trial</a>
+      </div>
     </div>
   </main>
 
