@@ -8,6 +8,9 @@
 
   <title>Frontend Mentor | Interactive pricing component</title>
 
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <link rel="stylesheet" href="./master.css">
   <script src="./main.js"></script>
@@ -26,25 +29,27 @@
     </div>
 
     <div class="card">
-      <p>Pageviews</p>
+      <p class="Pageviews"><span>100K</span> Pageviews</p>
       <div class="scroll">
         <div class=""></div>
       </div>
-      $ /month
+      <p><span class="price">$16.00</span> /month</p>
 
       <div class="toggle__section">
         <p>Monthly Billing</p>
-        <div class="toggle__btn"></div>
-        <p>Yearly Billing 25% discount</p>
+        <div class="toggle__btn">
+          <span class="toggle__btn--switch"></span>
+        </div>
+        <p>Yearly Billing <span class="discount">-25%</span> </p>
       </div>
 
-      <ul>
+      <ul class="perks">
         <li>Unlimited websites</li>
         <li>100% data ownership</li>
         <li>Email reports</li>
       </ul>
 
-      <a href="#">Start my trial</a>
+      <a href="#" class="trial__btn">Start my trial</a>
     </div>
   </main>
 
