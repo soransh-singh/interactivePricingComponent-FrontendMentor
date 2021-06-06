@@ -1,3 +1,7 @@
+:root{
+  --fill: 25%;
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -31,6 +35,7 @@ a{
 .head h1{
   color: hsl(227, 35%, 25%);
   font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .head p {
@@ -44,10 +49,11 @@ a{
   margin: 2rem auto;
   margin-top: -80px;
   width: min(90%, 600px);
-  padding: 1rem;
+  padding: 2rem 1rem;
   color: hsl(225, 20%, 60%);
   background: hsl(0, 0%, 100%);
   border-radius: .5rem;
+  box-shadow: 1px 7px 12px hsl(225, 20%, 80%);
 }
 
 .Pageviews{
@@ -57,12 +63,59 @@ a{
   letter-spacing: 1px;
 }
 
+.scroll-layout{
+  position: relative;
+}
+
 .scroll{
+  display: block;
+  -webkit-appearance: none;
   width : 100%;
-  height: 1rem;
-  background: red;
+  height: 10px;
+  background: hsl(224, 65%, 95%);
   margin: 1rem 0;
-  border-radius: .5rem;
+  border-radius: 5px;
+  transition: all 0.2 linear;
+  outline:none;
+}
+.scroll::-webkit-progress-value{
+  -webkit-appearance: none;
+  background: green;
+}
+
+.scroll::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background: hsl(174, 86%, 45%);
+  background-image: url("./images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px hsl(174, 86%, 45%);
+}
+
+.scroll:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: hsl(174, 77%, 60%);
+  cursor: pointer;
+}
+
+.scroll:focus::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: hsl(174, 86%, 45%);
+  box-shadow: none;
+
+}
+
+.scroll-fill{
+  width: var(--fill);
+  height: 10px;
+  border-radius: 5px 0 0 5px;
+  background: hsl(174, 86%, 45%);
+  position: absolute;
+  top: 0;
 }
 
 .monthly-cost{
@@ -80,6 +133,7 @@ a{
   display: flex;
   justify-content: center;
   font-size: 14px;
+  margin: 1rem 0;
 }
 
 
@@ -120,7 +174,7 @@ a{
 .card__footer{
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin: 2rem 1rem;
   padding-top: 1rem;
   border-top: solid 2px hsla(225, 20%, 60%, 0.25);
 }
@@ -128,6 +182,18 @@ a{
 .perks{
   text-align: center;
 }
+
+.perks__item{
+
+  transition: all 0.1s linear;
+}
+
+.perks__item:hover{
+  color: hsl(174, 86%, 45%);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .perks__item + .perks__item{
   margin-top: 0.5rem;
 }
@@ -142,9 +208,18 @@ a{
   margin: 1rem auto;
   color:hsl(224, 65%, 95%);
   background:  hsl(227, 35%, 25%);
+  border: solid 2px hsl(227, 35%, 25%);
   border-radius: 1.5rem;
   text-align: center;
+  font-weight: 800;
   max-width: 200px;
+  outline: none;
+  transition: all 0.2s linear;
+}
+
+.trial__btn:hover{
+  color:  hsl(227, 35%, 25%);
+  background: hsl(224, 65%, 95%);
 }
 
 @media(min-width: 600px){
@@ -163,11 +238,15 @@ a{
     justify-self: start;
   }
 
-  .scroll{
+  .scroll-layout{
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 3;
+  }
+
+  .scroll-fill{
+    top: 1rem;
   }
 
   .monthly-cost{
@@ -183,6 +262,7 @@ a{
     align-items: center;
   }
   .perks{
+    padding-left: 1rem;
     text-align: left;
   }
 }
